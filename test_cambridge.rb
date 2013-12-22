@@ -19,4 +19,8 @@ class TestCambridge < Test::Unit::TestCase
   def test_cmarbdige_3characters
     assert_equal("xyz", "xyz".cmarbdige)
   end
+
+  def test_cmarbdige_4characters
+    assert_equal("acbd", "abcd".cmarbdige)
+  end
 end

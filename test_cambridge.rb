@@ -24,6 +24,14 @@ class TestCambridge < Test::Unit::TestCase
     assert_equal("acbd", "abcd".cmarbdige)
   end
 
+  def test_cmarbdige_5characters
+    assert_equal("acbde", "abcde".cmarbdige)
+  end
+
+  def test_cmarbdige_6characters
+    assert_equal("acbedf", "abcdef".cmarbdige)
+  end
+
   def test_cambridge_have_no_punctuations
     assert_equal("acbd", LearnRubyKansai::cambridge("abcd", []))
   end

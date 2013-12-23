@@ -66,4 +66,8 @@ class TestCambridge < Test::Unit::TestCase
   def test_cambridge_newline_are_replaced_to_a_space
     assert_equal("abc def", LearnRubyKansai::cambridge("abc\ndef", []))
   end
+
+  def test_cambridge_sentence_is_trimmed
+    assert_equal("abc def", LearnRubyKansai::cambridge(" abc def ", []))
+  end
 end

@@ -9,3 +9,16 @@ class String
     end
   end
 end
+
+module LearnRubyKansai
+  def self.cambridge(str, punctuations)
+    case
+    when punctuations.empty?
+      str.strip.split(/\s+/).map(&:cmarbdige).join(' ')
+    else
+      punc = punctuations.shift
+      str.split(/#{Regexp.quote punc}/)
+        .map{|s| cambridge(s, punctuations.dup)}.join(punc)
+    end
+  end
+end

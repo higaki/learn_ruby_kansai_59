@@ -70,4 +70,8 @@ class TestCambridge < Test::Unit::TestCase
   def test_cambridge_sentence_is_trimmed
     assert_equal("abc def", LearnRubyKansai::cambridge(" abc def ", []))
   end
+
+  def test_cambridge__recover_punctuations
+    assert_equal(".abc.", LearnRubyKansai::cambridge(".abc.", ['.']))
+  end
 end

@@ -17,7 +17,7 @@ module LearnRubyKansai
       str.strip.split(/\s+/).map(&:cmarbdige).join(' ')
     else
       punc = punctuations.shift
-      str.split(/#{Regexp.quote punc}/)
+      str.split(/#{Regexp.quote punc}/, -1)
         .map{|s| cambridge(s, punctuations.dup)}.join(punc)
     end
   end

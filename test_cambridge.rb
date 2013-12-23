@@ -41,4 +41,21 @@ class TestCambridge < Test::Unit::TestCase
       "acbd.egfh,ikjl.monp", 
       LearnRubyKansai::cambridge("abcd.efgh,ijkl.mnop", %w[, .]))
   end
+
+  def test_cambridge_multiple_words
+    assert_equal(
+      "acbd egfh ikjl", LearnRubyKansai::cambridge("abcd efgh ijkl", []))
+  end
+
+  def test_cambridge_multiple_spaces_are_combined_into_one
+    assert_equal("abc def", LearnRubyKansai::cambridge("abc  def", []))
+  end
+
+  def test_cambridge_tab_are_replaced_to_a_space
+    assert_equal("abc def", LearnRubyKansai::cambridge("abc\tdef", []))
+  end
+
+  def test_cambridge_newline_are_replaced_to_a_space
+    assert_equal("abc def", LearnRubyKansai::cambridge("abc\ndef", []))
+  end
 end

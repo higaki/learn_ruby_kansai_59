@@ -22,3 +22,10 @@ module LearnRubyKansai
     end
   end
 end
+
+if $0 == __FILE__
+  str = ARGF.read
+  punctuations = str.scan(/\p{^Word}+/).reject{|p| /\A *\z/ =~ p}.uniq
+
+  puts LearnRubyKansai::cambridge(str, punctuations)
+end

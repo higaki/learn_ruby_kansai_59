@@ -71,7 +71,7 @@ class TestCambridge < Test::Unit::TestCase
     assert_equal("abc def", LearnRubyKansai::cambridge(" abc def ", []))
   end
 
-  def test_cambridge__recover_punctuations
+  def test_cambridge_recover_punctuations
     assert_equal(".abc.", LearnRubyKansai::cambridge(".abc.", ['.']))
   end
 end
